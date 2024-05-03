@@ -32,8 +32,8 @@ const Report = () => {
 
   const blockOne = {
     boxSizing: "border-box",
-    padding: '16px 32px 40px',
-  }
+    padding: "16px 32px 40px",
+  };
 
   const titleBlock = {
     display: "flex",
@@ -64,7 +64,7 @@ const Report = () => {
     gap: "24px",
     alignSelf: "stretch",
     justifyContent: "space-between",
-    marginBottom: '30px',
+    marginBottom: "30px",
   };
 
   const firstBlockTitle = {
@@ -96,7 +96,7 @@ const Report = () => {
     fontWeight: "700",
     fontSize: "16px",
     width: "100px",
-    margin: '5px 0px'
+    margin: "5px 0px",
   };
 
   const firstBlockContentTextTwo = {
@@ -163,7 +163,7 @@ const Report = () => {
     fontFamily: "Inter-Regular, sans-serif",
     fontWeight: "400",
     fontSize: "16px",
-    margin: '10px 0px'
+    margin: "10px 0px",
   };
   const secondBlockLine = {
     borderStyle: "solid",
@@ -186,12 +186,21 @@ const Report = () => {
   };
 
   return (
-    <div style={main}>
-      <div style={blockOne}>
-        <div style={titleBlock}>
-          <h1 style={titleStyles}>Составить отчет</h1>
-        </div>
-        <div style={blocks}>
+    <>
+      <style>
+        {`
+      body {
+        display: flex;
+        justify-content: center;
+      }
+    `}
+      </style>
+      <div style={main}>
+        <div style={blockOne}>
+          <div style={titleBlock}>
+            <h1 style={titleStyles}>Составить отчет</h1>
+          </div>
+          <div style={blocks}>
             <h2 style={firstBlockTitle}>Отчет за 21 апреля 2024</h2>
             <div style={firstBlock}>
               {information.map((info) => (
@@ -218,76 +227,77 @@ const Report = () => {
                 Распечатать
               </button>
             </div>
-          <div style={secondBlock}>
-            {orders.map((order) => (
-              <>
-                <div style={secondBlockFirstPart}>
-                  <p style={secondBlockText}>Кол-во заказов</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>{order.quantity}</span>
-                </div>
-                <div style={secondBlockFirstPart}>
-                  <p style={secondBlockText}>Итого</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.price} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockSecondPart}>
-                  <p style={secondBlockText}>Скидки</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.discount} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockSecondPart}>
-                  <p style={secondBlockText}>Использование сертификатов</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.certificate} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockFirstPart}>
-                  <p style={secondBlockText}>С учетом скидок</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPriceTwo}>
-                    {order.withDiscount} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockSecondPart}>
-                  <p style={secondBlockText}>Наличные оплаты</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.cash} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockSecondPart}>
-                  <p style={secondBlockText}>Безналичные оплаты</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.withoutCash} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockThirdPart}>
-                  <p style={secondBlockText}>Карточки</p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.cards} {order.currency}
-                  </span>
-                </div>
-                <div style={secondBlockThirdPart}>
-                  <p style={secondBlockText}>PAI.KG </p>
-                  <p style={secondBlockLine}></p>
-                  <span style={secondBlockPrice}>
-                    {order.pai} {order.currency}
-                  </span>
-                </div>
-              </>
-            ))}
+            <div style={secondBlock}>
+              {orders.map((order) => (
+                <>
+                  <div style={secondBlockFirstPart}>
+                    <p style={secondBlockText}>Кол-во заказов</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>{order.quantity}</span>
+                  </div>
+                  <div style={secondBlockFirstPart}>
+                    <p style={secondBlockText}>Итого</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.price} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockSecondPart}>
+                    <p style={secondBlockText}>Скидки</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.discount} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockSecondPart}>
+                    <p style={secondBlockText}>Использование сертификатов</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.certificate} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockFirstPart}>
+                    <p style={secondBlockText}>С учетом скидок</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPriceTwo}>
+                      {order.withDiscount} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockSecondPart}>
+                    <p style={secondBlockText}>Наличные оплаты</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.cash} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockSecondPart}>
+                    <p style={secondBlockText}>Безналичные оплаты</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.withoutCash} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockThirdPart}>
+                    <p style={secondBlockText}>Карточки</p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.cards} {order.currency}
+                    </span>
+                  </div>
+                  <div style={secondBlockThirdPart}>
+                    <p style={secondBlockText}>PAI.KG </p>
+                    <p style={secondBlockLine}></p>
+                    <span style={secondBlockPrice}>
+                      {order.pai} {order.currency}
+                    </span>
+                  </div>
+                </>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
