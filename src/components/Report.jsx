@@ -28,6 +28,8 @@ const Report = () => {
     justifyContent: "center",
     flexDirection: "column",
     maxWidth: "600px",
+    width: "100%", 
+    margin: "0 auto", 
   };
 
   const blockOne = {
@@ -55,7 +57,6 @@ const Report = () => {
   const blocks = {
     display: "flex",
     flexDirection: "column",
-    // alignItems: "center",
   };
 
   const firstBlock = {
@@ -80,7 +81,6 @@ const Report = () => {
     display: "flex",
     flexDirection: "column",
     width: "326px",
-    // gap: '10px',
   };
 
   const firstBlockStrings = {
@@ -103,7 +103,6 @@ const Report = () => {
     fontFamily: "Inter-Regular, sans-serif",
     fontWeight: "400",
     fontSize: "16px",
-    // width: "100px",
   };
 
   const btn = {
@@ -119,7 +118,6 @@ const Report = () => {
     fontWeight: "500",
     lineHeight: "122%",
     cursor: "pointer",
-    // marginTop: "10px",
   };
 
   const secondBlock = {
@@ -182,7 +180,6 @@ const Report = () => {
     fontFamily: "Inter-Bold, sans-serif",
     fontWeight: "700",
     fontSize: "20px",
-    // width: "100px",
   };
 
   return (
@@ -193,6 +190,11 @@ const Report = () => {
         display: flex;
         justify-content: center;
       }
+      @media screen and (max-width: 600px) {
+        #blockOne {
+          display: block !important;
+        }
+      }
     `}
       </style>
       <div style={main}>
@@ -202,7 +204,7 @@ const Report = () => {
           </div>
           <div style={blocks}>
             <h2 style={firstBlockTitle}>Отчет за 21 апреля 2024</h2>
-            <div style={firstBlock}>
+            <div style={firstBlock} id="blockOne">
               {information.map((info) => (
                 <div key={info.title} style={firstBlockContent}>
                   <div style={firstBlockStrings}>
